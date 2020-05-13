@@ -1,0 +1,18 @@
+description: A sample contract for a sample endpoint
+name: Example contract
+request:
+  urlPath: /mood
+  method: GET
+response:
+  status: 200
+  body:
+    feeling: "Good"
+    intenseFeeling: "GOOD"
+  matchers:
+    body:
+      - path: $.feeling
+        type: by_regex
+        value: (Good|Bad)
+      - path: $.intenseFeeling
+        type: by_regex
+        value: (GOOD|BAD)
